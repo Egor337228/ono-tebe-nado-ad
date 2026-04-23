@@ -1,10 +1,62 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Оно тебе надо — аукцион вещей, в которые никто не верил</title>
-  </head>
-  <body></body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оно тебе надо — АД</title>
+  <link rel="stylesheet" href="./styles/global.css">
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body class="page">
+  
+  <header class="header">
+    <form class="search-form" action="#" method="GET">
+      <input class="search-form__input" type="text" placeholder="Поиск..." required>
+      <label class="search-form__checkbox-label">
+        <input class="visually-hidden search-form__checkbox" type="checkbox" name="filter">
+        <span class="search-form__pseudo-checkbox"></span>
+        Только новые
+      </label>
+      <button class="search-form__submit-button" type="submit">Найти</button>
+    </form>
+  </header>
+
+  <main class="content">
+    <section class="content__player-section">
+      <div class="content__preloader">Загрузка...</div>
+      <video class="content__video" src="./video/main-video.mp4" controls poster="./images/poster.jpg"></video>
+    </section>
+
+    <section class="content__cards-section">
+      <ul class="content__list">
+        <li class="content__item">
+          <a href="#!" class="content__card-link content__card-link_current">
+            <article class="content__video-card">
+              <img class="content__video-card-thumbnail" src="./images/thumb1.jpg" alt="Превью видео 1">
+              <div class="content__video-card-info">
+                <h3 class="content__video-card-title">Очень длинное название видео, которое должно обрезаться троеточием</h3>
+                <p class="сontent__video-card-description">
+                  Это описание видео. Оно может быть очень длинным. По чек-листу мы должны обрезать его ровно после четвертой строки. Если текста больше, появится красивое троеточие в конце четвёртой строки.
+                </p>
+              </div>
+            </article>
+          </a>
+        </li>
+        <li class="content__item">
+          <a href="#!" class="content__card-link">
+            <article class="content__video-card">
+              <img class="content__video-card-thumbnail" src="./images/thumb2.jpg" alt="Превью видео 2">
+              <div class="content__video-card-info">
+                <h3 class="content__video-card-title">Короткое название</h3>
+                <p class="сontent__video-card-description">Краткое описание.</p>
+              </div>
+            </article>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="./scripts/index.js"></script>
+</body>
 </html>
