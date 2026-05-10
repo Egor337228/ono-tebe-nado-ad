@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="light-mode">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Оно тебе надо — аукцион вещей, в которые никто не верил</title>
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
-  <body></body>
+  <body>
+    <button class="theme-toggle" type="button">Тёмная тема</button>
+    <script>
+      const toggle = document.querySelector('.theme-toggle');
+      const root = document.documentElement;
+
+      toggle.addEventListener('click', () => {
+        const isDark = root.classList.contains('dark-mode');
+        root.classList.toggle('light-mode', isDark);
+        root.classList.toggle('dark-mode', !isDark);
+        toggle.textContent = isDark ? 'Тёмная тема' : 'Светлая тема';
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      });
+
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') {
+        root.classList.replace('light-mode', 'dark-mode');
+        toggle.textContent = 'Светлая тема';
+      }
+    </script>
+  </body>
 </html>
